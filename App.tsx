@@ -4,7 +4,7 @@ import * as React from 'react';
 import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import LoadingScreen from './components/LoadingScreen';
+import TempSplashScreen from './components/TempSplashScreen';
 import NextScreen from './components/NextScreen';
 
 const Stack = createNativeStackNavigator();
@@ -12,17 +12,14 @@ const Stack = createNativeStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="LoadingScreen" headerMode="none">
+      <Stack.Navigator initialRouteName="TempSplashScreen" headerMode="none">
+        {/* Reemplaza LoadingScreen por TempSplashScreen */}
         <Stack.Screen
-          name="LoadingScreen"
-          component={LoadingScreen}
+          name="TempSplashScreen"
+          component={TempSplashScreen}
           options={{headerShown: false}}
         />
-        <Stack.Screen
-          name="NextScreen"
-          component={NextScreen}
-          options={{headerShown: true}}
-        />
+        {/* <Stack.Screen name="NextScreen" component={NextScreen} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
