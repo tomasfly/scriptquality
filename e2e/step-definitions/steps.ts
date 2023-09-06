@@ -3,17 +3,15 @@ import {expect, $} from '@wdio/globals';
 
 import LoginPage from '../pageobjects/login.page';
 import SecurePage from '../pageobjects/secure.page';
-
-const pages = {
-  login: LoginPage,
-};
+// import {strict as assert} from 'node:assert';
 
 Given(/^I am on the (\w+) page$/, async page => {
   console.log(page);
   console.log('yay');
   const selector = 'new UiSelector().className("android.widget.ImageView")';
-  let myvar = await $(`android=${selector}`);
-  console.log(myvar);
+  await $(`android=${selector}`).waitForDisplayed();
+  // assert.strictEqual(true, await myvar.isDisplayed());
+  // expect(myvar).toBeDisplayed();
 });
 
 When(/^I login with (\w+) and (.+)$/, async (username, password) => {

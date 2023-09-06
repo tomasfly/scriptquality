@@ -7,7 +7,7 @@ const logoImage = require('../assets/logo.png');
 const TempSplashScreen = () => {
   return (
     <View style={styles.container}>
-      <Image source={logoImage} style={styles.logo} />
+      <Image source={logoImage} style={styles.logo} testID="logo" />
     </View>
   );
 };
